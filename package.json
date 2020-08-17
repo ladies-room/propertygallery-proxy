@@ -1,0 +1,22 @@
+{
+  "name": "propertygallery-proxy",
+  "version": "1.0.0",
+  "description": "proxy server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ladies-room/propertygallery-proxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ladies-room/propertygallery-proxy/issues"
+  },
+  "homepage": "https://github.com/ladies-room/propertygallery-proxy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

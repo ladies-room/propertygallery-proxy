@@ -1,28 +1,22 @@
 const express = require('express');
-const path = require('path')
 const app = express();
-const httpProxy = require('http-proxy');
-const apiProxy = httpProxy.createProxyServer();
-const serverOne = 'http://localhost:3003';
-
+const axios = require ('axios');
+const path = require('path');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const PORT = 3005;
 
-const dist = path.join(__dirname, '../public');
+const dist = path.join(__dirname, 'public');
+console.log(dist)
 
 app.use(express.static(dist));
-app.use(express.json());
 
-app.all('/property/26', function(req, res) {
-  console.log('Redirecting to ServerOne');
-  apiProxy.web(req, res, {target: serverOne});
-});
+app.use('/property/:id', createProxyMiddleware({ target: 'http://localhost:3003', changeOrigin: true }));
 
-
-app.listen(PORT, (err) => {
+app.listen(3005, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('Server running on: ', PORT);
+    console.log('Proxy server running on: ', PORT);
   }
 });

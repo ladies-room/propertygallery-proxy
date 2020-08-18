@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "proxy server",
   "main": "index.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   },
   "homepage": "https://github.com/ladies-room/propertygallery-proxy#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "http-proxy": "^1.18.1",
+    "http-proxy-middleware": "^1.0.5",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

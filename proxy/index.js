@@ -11,7 +11,7 @@ app.use(express.static(dist));
 
 //GALLERY
 app.get('/property/:id', (req, res) => {
-  axios.get('http://localhost:3003' + req.url)
+  axios.get('http://54.153.100.139:3003' + req.url)
     .then(response => {
       res.send(response.data);
     })
@@ -31,7 +31,7 @@ app.get("/listing", (req, res) => {
 app.all("/stays/*", (req, res) => {
   axios({
     method: req.method,
-    url: "http://localhost:3001" + req.originalUrl,
+    url: "http://18.204.156.27:3001" + req.originalUrl,
     headers: req.headers,
     data: req.data
   }).then((response) => {

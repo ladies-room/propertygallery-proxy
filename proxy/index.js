@@ -11,7 +11,7 @@ app.use(express.static(dist));
 
 //GALLERY
 app.get('/property/:id', (req, res) => {
-  axios.get('http://54.153.100.139:3003' + req.url)
+  axios.get('http://54.215.39.92:3003' + req.url)
     .then(response => {
       res.send(response.data);
     })

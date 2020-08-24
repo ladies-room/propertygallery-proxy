@@ -22,7 +22,7 @@ app.get('/property/:id', (req, res) => {
 
 //CALENDAR
 app.get("/listing", (req, res) => {
-  var getListingAddress = 'http://localhost:2046/listing'
+  var getListingAddress = 'http://3.17.161.89:2046/listing'
   axios.get(`${getListingAddress}/`)
     .then(response => {
       res.send(response.data)
